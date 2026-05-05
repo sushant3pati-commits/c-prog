@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blooming Buds School</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007BFF; /* Blue theme */
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #007BFF;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav {
+                display: block;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Blooming Buds School</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#courses">Courses</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Home</h2>
+        <p>Welcome to Blooming Buds School, where learning blossoms.</p>
+    </section>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>Blooming Buds School is committed to providing quality education to children.</p>
+    </section>
+
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <ul>
+            <li>Mathematics</li>
+            <li>Science</li>
+            <li>English Language Arts</li>
+            <li>Art</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br><br>
+
+            <button type="submit">Send</button>
+        </form>
+        <div id="success-message" style="display:none;">Your message has been sent successfully!</div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Blooming Buds School</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').onsubmit = function(event) {
+            event.preventDefault(); // Prevent form submission
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation
+            if(name && email && message) {
+                document.getElementById('success-message').style.display = 'block';
+                document.getElementById('contact-form').reset();
+            }
+        };
+    </script>
+</body>
+</html>
